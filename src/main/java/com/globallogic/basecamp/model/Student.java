@@ -5,7 +5,6 @@ package com.globallogic.basecamp.model;
  */
 public class Student {
 
-
     public final String email;
 
     public String firstName;
@@ -121,7 +120,7 @@ public class Student {
         StudentBuilder() {
         }
 
-        public StudentBuilder setEmail(String email) {
+        public StudentBuilder email(String email) {
             this.email = email;
             return this;
         }

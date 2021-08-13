@@ -21,7 +21,6 @@ public class GlobalLogicTraining implements Training {
 
     public GlobalLogicTraining(String name) {
         this.name = name;
-
     }
 
     @Override
