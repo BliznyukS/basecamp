@@ -13,26 +13,69 @@ public class Address {
 
     private final Integer houseNumber;
 
-    /**
-     * TODO: implement getters and other methods if necessary
-     */
-
-    /**
-     * Allows to get the builder for the Address
-     *
-     * @return builder
-     */
-    public static Builder builder() {
-        
+    Address(String country, String city, String street, Integer houseNumber) {
+        this.country = country;
+        this.city = city;
+        this.street = street;
+        this.houseNumber = houseNumber;
     }
 
-    /**
-     * Builder class is a part of the builder pattern implementation
-     * Needed to ease the Address object construction
-     * <p>
-     * TODO: implement the builder functionality
-     */
-    public class Builder {
+    public static AddressBuilder builder() {
+        return new AddressBuilder();
     }
 
+
+    public String getCountry() {
+        return this.country;
+    }
+
+    public String getCity() {
+        return this.city;
+    }
+
+    public String getStreet() {
+        return this.street;
+    }
+
+    public Integer getHouseNumber() {
+        return this.houseNumber;
+    }
+
+    public static class AddressBuilder {
+        private String country;
+        private String city;
+        private String street;
+        private Integer houseNumber;
+
+        AddressBuilder() {
+        }
+
+        public AddressBuilder setCountry(String country) {
+            this.country = country;
+            return this;
+        }
+
+        public AddressBuilder setCity(String city) {
+            this.city = city;
+            return this;
+        }
+
+        public AddressBuilder setStreet(String street) {
+            this.street = street;
+            return this;
+        }
+
+        public AddressBuilder setHouseNumber(Integer houseNumber) {
+            this.houseNumber = houseNumber;
+            return this;
+        }
+
+        public Address build() {
+            return new Address(country, city, street, houseNumber);
+        }
+
+        public String toString() {
+            return "Address.AddressBuilder(country=" + this.country + ", city=" + this.city + ", street=" + this.street + ", houseNumber=" + this.houseNumber + ")";
+        }
+    }
 }

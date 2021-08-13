@@ -3,10 +3,12 @@ package com.globallogic.basecamp;
 import com.globallogic.basecamp.model.Grade;
 import com.globallogic.basecamp.model.Student;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -33,6 +35,7 @@ public class TrainingUtils {
     public static List<String> getStudentEmailsByCondition(Stream<Training> trainings,
                                                            Predicate<Student> predicate) {
 
+        return null;
     }
 
     /**
@@ -43,6 +46,7 @@ public class TrainingUtils {
      */
     public static Map<String, List<String>> getTrainingsPerStudent(Stream<Training> trainings) {
 
+        return null;
     }
 
     /**
@@ -54,6 +58,7 @@ public class TrainingUtils {
      */
     public static Map<String, Double> getAverageMarkPerStudent(Stream<Training> trainings) {
 
+        return null;
     }
 
     /**
@@ -74,6 +79,7 @@ public class TrainingUtils {
      */
     public static List<String> getStudentsWithMaxMark(Stream<Training> trainings) {
 
+        return null;
     }
 
     /**
@@ -97,6 +103,7 @@ public class TrainingUtils {
      */
     public static List<String> getStudentsSorted(Stream<Training> trainings) {
 
+        return null;
     }
 
     /**
@@ -109,6 +116,7 @@ public class TrainingUtils {
      */
     public static List<String> getStudentsWithMarkLowerThan(Stream<Training> trainings, int mark) {
 
+        return null;
     }
 
     /**
@@ -120,7 +128,9 @@ public class TrainingUtils {
      * @return true if the student attends any training, false otherwise
      */
     public static boolean isStudentPresentOnTrainings(Stream<Training> trainings, Student student) {
-
+        return trainings
+                .map(Training::getStudents)
+                .anyMatch(students -> students.contains(student));
     }
 
     /**
@@ -132,6 +142,7 @@ public class TrainingUtils {
      */
     public static Map<String, Double> getAverageMarkPerTraining(Stream<Training> trainings) {
 
+        return null;
     }
 
 }

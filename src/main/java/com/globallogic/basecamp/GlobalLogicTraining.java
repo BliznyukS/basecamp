@@ -3,7 +3,7 @@ package com.globallogic.basecamp;
 import com.globallogic.basecamp.model.Grade;
 import com.globallogic.basecamp.model.Student;
 
-import java.util.HashMap;
+import java.util.*;
 
 /**
  * GlobalLogicTraining is an implementation of the {@link com.globallogic.basecamp.Training Training} interface.
@@ -20,7 +20,47 @@ public class GlobalLogicTraining implements Training {
     private final HashMap<Student, Grade> grades = new HashMap<>();
 
     public GlobalLogicTraining(String name) {
+        this.name = name;
 
     }
 
+    @Override
+    public String getName() {
+        return null;
+    }
+
+    @Override
+    public List<Student> getStudents() {
+        return new ArrayList<>(grades.keySet());
+    }
+
+    @Override
+    public boolean addStudent(Student student) {
+        return false;
+    }
+
+    @Override
+    public boolean removeStudent(Student student) {
+        return false;
+    }
+
+    @Override
+    public boolean rateFirstSemester(Student student, int mark) {
+        return false;
+    }
+
+    @Override
+    public boolean rateSecondSemester(Student student, int mark) {
+        return false;
+    }
+
+    @Override
+    public boolean isPresent(Student student) {
+        return false;
+    }
+
+    @Override
+    public Optional<Grade> getStudentGrade(Student student) {
+        return Optional.empty();
+    }
 }
