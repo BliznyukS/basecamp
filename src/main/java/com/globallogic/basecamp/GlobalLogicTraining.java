@@ -26,7 +26,7 @@ public class GlobalLogicTraining implements Training {
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 
     @Override

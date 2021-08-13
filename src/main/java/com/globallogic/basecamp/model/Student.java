@@ -121,7 +121,7 @@ public class Student {
         StudentBuilder() {
         }
 
-        public StudentBuilder email(String email) {
+        public StudentBuilder setEmail(String email) {
             this.email = email;
             return this;
         }
